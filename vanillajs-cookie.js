@@ -21,5 +21,5 @@ vCookie.set = function(name, value) {
 }
 // Remove a specific cookie
 vCookie.remove = function( name ) {
-  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;domain=.' + document.domain;
 }
