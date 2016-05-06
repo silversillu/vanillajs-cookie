@@ -1,12 +1,22 @@
 vCookie = {};
 // Get a specific cookie
 vCookie.get = function(name) {
-  return (name = (document.cookie + ';').match(new RegExp(name + '=.*;'))) && name[0].split(/=|;/)[1];
+  if(name != null){
+    return (name = (document.cookie + ';').match(new RegExp(name + '=.*;'))) && name[0].split(/=|;/)[1];
+  }else{
+    var vCookiesIn = document.cookie.split(';');
+    var vCookiesOut = [];
+    for (var i = 1 ; i <= vCookiesIn.length; i++) {
+        vCookiesHolder = vCookiesIn[i-1].split('=');
+        vCookiesOut.push({name : vCookiesHolder[0], value : vCookiesHolder[1]});
+    }
+    return vCookiesOut;
+  }
 }
-// Set a new cookie
-vCookie.set = function(name, value, days) {
+// Set a ne//w cookie
+vCookie.set = function(name, value) {
   //var e = new Date;
-  //e.setDate(e.getDate() + (days || 365));
+  //e.setDate(e.getDate() + (days));
   document.cookie = name + "=" + value + ';path=/;domain=.' + document.domain;
 }
 // Remove a specific cookie
