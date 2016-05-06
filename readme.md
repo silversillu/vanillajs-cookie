@@ -22,13 +22,13 @@ vCookie.set('name', 'value');
 ```
 
 Create expiring cookie, 7 days from then:
-** Feature in progress!**
+**Feature in progress!**
 ```javascript
 vCookie.set('name', 'value', { expires: 7 });
 ```
 
 Create expiring cookie, valid across entire site:
-** Feature in progress!**
+**Feature in progress!**
 ```javascript
 vCookie.set('name', 'value', { expires: 7, path: '/' });
 ```
